@@ -1,0 +1,3 @@
+[submodule "medical-chat"]
+	path = medical-chat
+	url = git@github.com:DowneyTung/medical-chat.git
