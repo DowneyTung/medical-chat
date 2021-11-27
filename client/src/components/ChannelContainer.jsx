@@ -1,11 +1,10 @@
-import React from 'react'
-import {Channel, useChatContext} from 'stream-chat-react'
+import React from 'react';
+import {Channel, MessageTeam} from 'stream-chat-react';
 
-import {ChannelInner, CreateChannel, EditChannel, TeamMessage} from './'
+import {ChannelInner, CreateChannel, EditChannel} from './';
 
 const ChannelContainer = ({isCreating, setIsCreating, isEditing, setIsEditing, createType}
 ) => {
- const { channel } = useChatContext();
 
  if(isCreating) {
    return (
@@ -23,23 +22,23 @@ const ChannelContainer = ({isCreating, setIsCreating, isEditing, setIsEditing, c
    )
  }
 
- const EmptyState = () => {
-  <div className='channel-empty_container'>
+ const EmptyState = () => (
+  <div className='channel-empty__container'>
      <p className="channel-empty__first">This is the beginning of your chat history </p>
      <p className="channel-empty__second">Send messages, attachment, links, emojis, and more!</p>
   </div>
- }
+ )
 
  return (
   <div className="channel__container">
    <Channel 
        EmptyStateIndicator={EmptyState}
-       Message={(messageProps, i) => <TeamMessage key={i} {...messageProps}/>}    
+       Message={(messageProps, i) => <MessageTeam key={i} {...messageProps}/>}    
    >
      <ChannelInner setIsEditing={setIsEditing}/>
    </Channel>
   </div>
- )
+ );
 }
 
 export default ChannelContainer

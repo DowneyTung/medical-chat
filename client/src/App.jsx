@@ -42,10 +42,9 @@ const App = () => {
         <ChannelListContainer
             isCreating={isCreating}
             setIsCreating={setIsCreating}
-            setCreateType={createType}
+            setCreateType={setCreateType}
             setIsEditing={setIsEditing}
         />
-        {/* this is not the best approach to pass props, a better way would be use context api */}
         <ChannelContainer
             isCreating={isCreating}
             setIsCreating={setIsCreating}
@@ -55,7 +54,7 @@ const App = () => {
         />
     </Chat>
   </div>
- )
+ );
 }
 
-export default App
+export default App;

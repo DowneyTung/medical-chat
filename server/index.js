@@ -22,6 +22,7 @@ app.get('/', (req, res) => {
   res.send('Hello, Wrold!');
 })
 
+
 app.use('/auth', authRoutes);
 
 app.post('/', (req, res) => {

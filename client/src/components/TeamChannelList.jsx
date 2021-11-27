@@ -1,7 +1,8 @@
 import React from 'react'
 
 import {AddChannel} from '../assets';
-const TeamChannelList = ({children, error = false, loading, type}) => {
+
+const TeamChannelList = ({setToggleContainer, children, error = false, loading, type, isCreating, setIsCreating, setCreateType, setIsEditing}) => {
     if (error) {
      return type === 'team'? (
          <div className="team-channel-list">
@@ -9,7 +10,7 @@ const TeamChannelList = ({children, error = false, loading, type}) => {
                 Connection error, please wait a moment and try again
              </p>
          </div>
-     ) : null;
+     ) : null
     }
 
     if(loading){
@@ -21,6 +22,7 @@ const TeamChannelList = ({children, error = false, loading, type}) => {
          </div>
      )
     }
+    
  return (
   <div className="team-channel-list"> 
        <div className="team-channel-list__header">
@@ -28,6 +30,14 @@ const TeamChannelList = ({children, error = false, loading, type}) => {
             {type === 'team' ? 'Channels' : 'Direct Messages'}
         </p>
         {/* Button - add channel */}
+        <AddChannel 
+            isCreating={isCreating}
+            setIsCreating={setIsCreating}
+            setCreateType={setCreateType}
+            setIsEditing={setIsEditing}
+            type={type === 'team'? 'team' : 'messaging'}
+            setToggleContainer={setToggleContainer}
+        />
        </div>
        {children}
   </div>
