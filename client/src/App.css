@@ -809,6 +809,27 @@ body {
   cursor: pointer;
 }
 
+.edit-channel__button-wrapper {
+  height: 82px;
+  background: #f7f6f8;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  border-bottom-right-radius: 16px;
+}
+
+.edit-channel__button-wrapper p {
+  background: var(--primary-color);
+  font-family: Helvetica Neue, sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 10px 20px;
+  color: #ffffff;
+  margin-right: 30px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
 .auth__form-container_fields-account {
   display: flex;
   justify-content: flex-start;
